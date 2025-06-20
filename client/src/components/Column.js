@@ -14,14 +14,25 @@ const Column = ({ status, title, tasks, moveTask, deleteTask }) => {
     <div
       ref={drop}
       style={{
-        background: "#f0f0f0",
-        padding: 10,
-        width: 250,
+        background: "#f5f5f5",
+        padding: 20,
+        width: 300,
         minHeight: 500,
-        borderRadius: 8,
+        borderRadius: 12,
+        boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
       }}
     >
-      <h3>{title}</h3>
+      <h2
+        style={{
+          textAlign: "center",
+          padding: "10px 0",
+          background: "#eee",
+          borderRadius: "6px",
+          fontWeight: "bold",
+        }}
+      >
+        {title}
+      </h2>
       {tasks.map((task) => (
         <TaskCard key={task._id} task={task} deleteTask={deleteTask} />
       ))}
